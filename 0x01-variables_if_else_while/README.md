@@ -1,1 +1,1 @@
-c variables and conditional statements
+Tasks on variables if and else statements as well as while loops
