@@ -15,7 +15,7 @@ for (jam = 0; jam < n && src[jam] != '\0'; jam++)
 {
 dest[jam] = src[jam];
 }
-for (jam < n; jam++)
+for (;jam < n; jam++)
 {
 dest[jam] = '\0';
 }
