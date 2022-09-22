@@ -10,14 +10,14 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-int jam;
-for (jam = 0; jam < n && src[jam] != '\0'; jam++)
+int index;
+for (index = 0; index < n && src[index] != '\0'; index++)
 {
-dest[jam] = src[jam];
+dest[index] = src[index];
 }
-for (;jam < n; jam++)
+for (;index < n; index++)
 {
-dest[jam] = '\0';
+dest[index] = '\0';
 }
 return (dest);
 }
