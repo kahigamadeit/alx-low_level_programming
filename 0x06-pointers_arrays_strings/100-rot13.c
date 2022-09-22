@@ -8,13 +8,12 @@
 
 char *rot13(char *str)
 {
+int me = 0, u;
 char this1[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 char this2[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-int me;
-int u = 0;
-for (me = 0; str[me] != '\0'; me++)
+while (str[me])
 {
-for (u = 0; this1[u] != '\0'; u++)
+for (u = 0; this1 < 52; u++)
 {
 if (str[me] == this1[u])
 {
@@ -22,6 +21,7 @@ str[me] = this2[u];
 break;
 }
 }
+me++;
 }
 return (str);
 }
