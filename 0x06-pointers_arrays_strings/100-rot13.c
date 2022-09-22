@@ -8,20 +8,20 @@
 
 char *rot13(char *str)
 {
-int me = 0, u;
 char this1[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 char this2[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-while (str[me])
+int i;
+int j = 0;
+for (i = 0; str[i] != '\0'; i++)
 {
-for (u = 0; this1 < 52; u++)
+for (j = 0; this1[j] != '\0'; u++)
 {
-if (str[me] == this1[u])
+if (str[i] == this1[j])
 {
-str[me] = this2[u];
+str[i] = this2[j];
 break;
 }
 }
-me++;
 }
 return (str);
 }
