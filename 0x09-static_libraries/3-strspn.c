@@ -21,5 +21,5 @@ supposed_count++;
 if (count == 0 || count != supposed_count)
 break;
 }
-return (count);
+return(count);
 }
