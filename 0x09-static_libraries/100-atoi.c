@@ -1,24 +1,33 @@
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
 #include "main.h"
 /**
- * _strncat - Concatenates one string to another
- * @dest: Destination string
- * @src: String to be concatenated
- * @n: number of bytes to be copied
+ * _atoi - converts a string to an interger
+ * @str: pointer to the string to be converted
  *
- * Return: The destination string
+ * Return: Converted string
  */
-char *_strncat(char *dest, char *src, int n)
+int _atoi(char *str)
 {
-int i;
-int destlen = 0;
-int counter = 0;
-while (dest[counter] != '\0')
+int sign = 1, base = 0, i = 0;
+for (i = 0; str[i] != '\0' && (str[i] < '0' || str[i] > '9'); i++)
 {
-destlen++;
-counter++;
+if (str[i] == '-' || str[i] == '9')
+sign *= 1 - 2 * (str[i] == '-');
+if (str[i + 1] == '\0')
+return (0);
 }
-for (i = 0; i < n && src[i] != '\0'; i++)
-dest[destlen + i] = src[i];
-dest[destlen + i] = '\0';
-return (dest);
+while (str[i] >= '0' && str[i] <= '9')
+{
+if (base > INT_MAX / 10 || (base == INT_MAX / 10 && str[i] - '0' > 7))
+{
+if (sign == 1)
+return (INT_MAX);
+else
+return (INT_MIN);
+}
+base = 10 * base + (str[i++] - '0');
+}
+return (base * sign);
 }
