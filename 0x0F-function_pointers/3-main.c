@@ -1,5 +1,4 @@
 #include "3-calc.h"
-/*file: 3-main.c*/
 /**
  * main - gets arguements from cli
  * @argc: argument count.
